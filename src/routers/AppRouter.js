@@ -20,6 +20,9 @@ export const AppRouter = () => {
         <Route path='/Home'>
           <Home />
         </Route>
+        <Route path='/Proyectos'>
+          <Home />
+        </Route>
         <Redirect to='/' />
       </Switch>
     </Router>
