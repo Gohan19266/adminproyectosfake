@@ -11,8 +11,12 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import FolderSharedIcon from '@material-ui/icons/FolderShared';
 import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import SchoolIcon from '@material-ui/icons/School';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItem, List, ListItemIcon, ListItemText } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 
@@ -91,18 +95,33 @@ const Drawers = (props) => {
   const itemsList = [
     {
       text: 'Home',
-      icon: <InboxIcon />,
+      icon: <HomeIcon />,
       onClick: () => history.push('/'),
     },
     {
-      text: 'About',
-      icon: <MailIcon />,
-      onClick: () => history.push('/about'),
+      text: 'Mis Proyectos',
+      icon: <FolderSharedIcon />,
+      onClick: () => history.push('/Proyectos'),
     },
     {
-      text: 'Contact',
+      text: 'Materias',
+      icon: <ImportContactsIcon />,
+      onClick: () => history.push('/Materias'),
+    },
+    {
+      text: 'Mensajes',
       icon: <MailIcon />,
-      onClick: () => history.push('/contact'),
+      onClick: () => history.push('/Mensajes'),
+    },
+    {
+      text: 'Docentes',
+      icon: <SchoolIcon />,
+      onClick: () => history.push('/Docentes'),
+    },
+    {
+      text: 'Perfil',
+      icon: <AccountCircleIcon />,
+      onClick: () => history.push('/Perfil'),
     },
   ];
 
