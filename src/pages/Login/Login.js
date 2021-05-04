@@ -46,10 +46,12 @@ const Login = (props) => {
   };
 
   return (
+  <div>
     <div className='container login-container'>
       <div className='row'>
         <div className='col-md-6 login-form-1'>
-          <h3>INICIO</h3>
+          <img className ='logo' src="http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png"/>
+           <p className ='cab'>Ingrese su codigo de Campus Virtual</p>
           <form>
             <div className='form-group'>
               <input
@@ -85,6 +87,7 @@ const Login = (props) => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
