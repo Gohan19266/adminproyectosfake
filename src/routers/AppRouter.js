@@ -9,7 +9,7 @@ import {
 
 import Login from '../pages/Login/Login';
 import { Home } from '../pages/Home/Home';
-import {Register}  from '../pages/Register/Register';
+import { MisProyectos } from '../pages/MisProyectos/MisProyectos';
 
 export const AppRouter = () => {
   return (
@@ -24,8 +24,8 @@ export const AppRouter = () => {
         <Route path='/Proyectos'>
           <Home />
         </Route>
-        <Route exact path='/Register'>
-          <Register />
+        <Route exact path='/MisProyectos'>
+          <MisProyectos />
         </Route>
         <Redirect to='/' />
       </Switch>
