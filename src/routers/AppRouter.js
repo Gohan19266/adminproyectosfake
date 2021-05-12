@@ -9,6 +9,7 @@ import {
 
 import Login from '../pages/Login/Login';
 import { Home } from '../pages/Home/Home';
+import { MisProyectos } from '../pages/MisProyectos/MisProyectos';
 
 export const AppRouter = () => {
   return (
@@ -22,6 +23,9 @@ export const AppRouter = () => {
         </Route>
         <Route path='/Proyectos'>
           <Home />
+        </Route>
+        <Route exact path='/MisProyectos'>
+          <MisProyectos />
         </Route>
         <Redirect to='/' />
       </Switch>

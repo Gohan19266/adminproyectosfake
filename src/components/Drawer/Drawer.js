@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -56,8 +57,7 @@ const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
+    marginBottom: 15,
     justifyContent: 'flex-end',
   },
   content: {
