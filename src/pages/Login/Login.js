@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Swal from 'sweetalert2';
@@ -46,48 +47,51 @@ const Login = (props) => {
   };
 
   return (
-  <div>
-    <div className='container login-container'>
-      <div className='row'>
-        <div className='col-md-6 login-form-1'>
-          <img className ='logo' src="http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png"/>
-           <p className ='cab'>Ingrese su codigo de Campus Virtual</p>
-          <form>
-            <div className='form-group'>
-              <input
-                type='text'
-                className='form-control'
-                placeholder='Codigo del Campus '
-                name='lcampusCode'
-                value={lcampusCode}
-                onChange={handleLoginInputChange}
-              />
-            </div>
-            <div className='form-group'>
-              <input
-                type='password'
-                className='form-control'
-                placeholder='Contraseña'
-                name='lPassword'
-                value={lPassword}
-                onChange={handleLoginInputChange}
-              />
-            </div>
-            <div className='wrap'>
-              <Button
-                type='submit'
-                variant='contained'
-                color='primary'
-                onClick={handleLogin}
-              >
-                Ingresar
-              </Button>
-            </div>
-          </form>
+    <div>
+      <div className='container login-container'>
+        <div className='row'>
+          <div className='col-md-6 login-form-1'>
+            <img
+              className='logo'
+              src='http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png'
+            />
+            <p className='cab'>Ingrese su codigo de Campus Virtual</p>
+            <form>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='Codigo del Campus '
+                  name='lcampusCode'
+                  value={lcampusCode}
+                  onChange={handleLoginInputChange}
+                />
+              </div>
+              <div className='form-group'>
+                <input
+                  type='password'
+                  className='form-control'
+                  placeholder='Contraseña'
+                  name='lPassword'
+                  value={lPassword}
+                  onChange={handleLoginInputChange}
+                />
+              </div>
+              <div className='wrap'>
+                <Button
+                  type='submit'
+                  variant='contained'
+                  color='primary'
+                  onClick={handleLogin}
+                >
+                  Ingresar
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
