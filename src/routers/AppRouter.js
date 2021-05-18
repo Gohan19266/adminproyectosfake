@@ -10,6 +10,7 @@ import {
 import Login from '../pages/Login/Login';
 import { Home } from '../pages/Home/Home';
 import { MisProyectos } from '../pages/MisProyectos/MisProyectos';
+import { MiPerfil } from '../pages/MiPerfil/MiPerfil';
 
 export const AppRouter = () => {
   return (
@@ -26,6 +27,9 @@ export const AppRouter = () => {
         </Route>
         <Route exact path='/MisProyectos'>
           <MisProyectos />
+        </Route>
+        <Route exact path='/Perfil'>
+          <MiPerfil />
         </Route>
         <Redirect to='/' />
       </Switch>
