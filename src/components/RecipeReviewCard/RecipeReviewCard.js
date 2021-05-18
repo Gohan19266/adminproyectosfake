@@ -11,28 +11,28 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { useRecipeReviewCardStyles } from '../../core/styles/RecipeReviewCardStyles/useRecipeReviewCardStyles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
-
+import ModalConfig from '../ModalConfig/ModalConfig'
 export default function RecipeReviewCard({ proyecto }) {
   const classes = useRecipeReviewCardStyles();
+  
   const [expanded, setExpanded] = React.useState(false);
   console.log(proyecto);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+    let Leter = proyecto.nombre.substr(0,2);
   return (
     <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label='recipe' className={classes.avatar}>
-            P
+           {Leter} 
           </Avatar>
         }
         action={
-          <IconButton aria-label='settings'>
-            <MoreVertIcon />
+          <IconButton aria-label='settings'> 
+            <ModalConfig/>
           </IconButton>
         }
         title={proyecto.nombre}
