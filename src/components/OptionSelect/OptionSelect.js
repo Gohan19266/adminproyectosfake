@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -8,30 +7,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  root: {
-    background: 'white',
-    border: 30,
-    borderRadius: 10,
-    boxShadow: 'gray',
-    color: 'gray',
-    height: 40,
-    padding: '0 30px',
-  },
-}));
+import {useOptionSelectStyle} from '../../core/styles/OptionSelect/useOptionSelectStyle';
 
 export default function OptionSelect() {
-  const classes = useStyles();
+  const classes = useOptionSelectStyle();
   const [open, setOpen] = React.useState(false);
   const [Estado, setEstado] = React.useState('');
 
