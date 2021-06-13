@@ -65,7 +65,7 @@ const Drawers = (props) => {
     {
       text: 'Docentes',
       icon: <SchoolIcon />,
-      onClick: () => history.push('/Docentes'),
+      onClick: () => history.push('/Docente'),
     },
     {
       text: 'Perfil',
@@ -95,7 +95,7 @@ const Drawers = (props) => {
           </IconButton>
           <Typography variant='h6' noWrap>
             Sistema de Proyectos Integradores
-          </Typography>
+          </Typography> 
         </Toolbar>
       </AppBar>
       <Drawer
@@ -128,6 +128,7 @@ const Drawers = (props) => {
             );
           })}
         </List>
+        <img src='http://k43.kn3.net/taringa/1/4/4/3/8/4/69/alkorrogasth/CAD.gif?2423'/>
       </Drawer>
       <main
         className={clsx(classes.content, {

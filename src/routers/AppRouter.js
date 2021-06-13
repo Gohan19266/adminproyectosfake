@@ -10,24 +10,37 @@ import {
 import Login from '../pages/Login/Login';
 import { Home } from '../pages/Home/Home';
 import { MisProyectos } from '../pages/MisProyectos/MisProyectos';
+import {PublicRoute, PrivateRoute  } from './helperRoutes';
+import { isAuthenticated } from '../services/authentication';
+import { Docente } from '../pages/Docente/Docente';
 
 export const AppRouter = () => {
+  const isAuth = isAuthenticated();
   return (
     <Router>
       <Switch>
-        <Route exact path='/'>
+        <PublicRoute exact path='/'>
           <Login />
-        </Route>
-        <Route path='/Home'>
+        </PublicRoute>
+        <PrivateRoute path='/Home'>
           <Home />
-        </Route>
-        <Route path='/Proyectos'>
+        </PrivateRoute>
+        <PrivateRoute path='/Proyectos'>
           <Home />
-        </Route>
-        <Route exact path='/MisProyectos'>
+        </PrivateRoute>
+        <PrivateRoute exact path='/MisProyectos'>
           <MisProyectos />
-        </Route>
-        <Redirect to='/' />
+        </PrivateRoute>
+        <PrivateRoute exact path='/Docente'>
+          <Docente/>
+        </PrivateRoute>
+
+        <Route exact path ='*' render ={()=>{
+          return <Redirect to= {isAuth? '/Home': '/'}/>
+
+        }}/>
+    
+        {/* <Redirect to='/' /> */}
       </Switch>
     </Router>
   );
