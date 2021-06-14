@@ -18,7 +18,6 @@ const Login = (props) => {
     }
   `;
 
-
   const [authUser] = useMutation(AuthUser);
 
   const [formLoginValues, handleLoginInputChange] = useForm({
@@ -34,8 +33,8 @@ const Login = (props) => {
       const { data } = await authUser({
         variables: { campusCode: lcampusCode, password: lPassword },
       });
+      window.sessionStorage.setItem('token', data.token);
       history.push('/Home');
-      console.log(data);
     } catch (error) {
       console.log(error);
       Swal.fire({
