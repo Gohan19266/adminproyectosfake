@@ -1,0 +1,21 @@
+.imagen-principal {
+  width: 1200px;
+  margin-left: 200px;
+  margin-right: 50px;
+}
+
+.image-choque {
+  width: 200px;
+}
+
+.colum-video {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.colum-objects {
+  display: flex;
+  flex-direction: row;
+}
