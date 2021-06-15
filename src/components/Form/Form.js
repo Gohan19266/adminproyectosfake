@@ -14,7 +14,7 @@ const Form = () => {
       $descripcion: String!
       $estado: String!
       $codigoEstudiante: String!
-      $codigoProfesor: String!
+      $email: String!
       $codigoMateria: String!
     ) {
       createProyect(
@@ -23,7 +23,7 @@ const Form = () => {
           descripcion: $descripcion
           estado: $estado
           codigoEstudiante: $codigoEstudiante
-          codigoProfesor: $codigoProfesor
+          email: $email
           codigoMateria: $codigoMateria
         }
       ) {
@@ -38,7 +38,7 @@ const Form = () => {
     ldescripcion: '',
     lestado: '',
     lcodigoEstudiante: '',
-    lcodigoProfesor: '',
+    lemail: '',
     lcodigoMateria: '',
   });
 
@@ -47,7 +47,7 @@ const Form = () => {
     ldescripcion,
     lestado,
     lcodigoEstudiante,
-    lcodigoProfesor,
+    lemail,
     lcodigoMateria,
   } = formRegisterValues;
 
@@ -59,7 +59,7 @@ const Form = () => {
           descripcion: ldescripcion,
           estado: lestado,
           codigoEstudiante: lcodigoEstudiante,
-          codigoProfesor: lcodigoProfesor,
+          email: lemail,
           codigoMateria: lcodigoMateria,
         },
       });
@@ -126,9 +126,9 @@ const Form = () => {
                 <input
                   type='text'
                   className='form-control'
-                  placeholder='Codigo profesor'
-                  name='lcodigoProfesor'
-                  value={lcodigoProfesor}
+                  placeholder='Email'
+                  name='lemail'
+                  value={lemail}
                   onChange={handleRegisterInputChange}
                 />
               </div>
