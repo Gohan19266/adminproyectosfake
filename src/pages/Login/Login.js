@@ -54,9 +54,7 @@ const Login = (props) => {
       <div className='container login-container'>
         <div className='row'>
           <div className='col-md-6 login-form-1'>
-            <img
-              className='logo'
-              src='http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png'
+            <img src='https://www.unac.edu.co/wp-content/uploads/2021/02/logoblanco1.png' className='logo'
             />
             <p className='cab'>Ingrese su codigo de Campus Virtual</p>
             <form>
