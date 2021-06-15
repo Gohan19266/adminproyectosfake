@@ -1,0 +1,17 @@
+@media (min-width: 425px) and (max-width: 760px) {
+  .makeStyles-root-1 {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 424px) {
+  .makeStyles-root-1 {
+    flex-direction: column !important;
+  }
+}
+
+.colum-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-gap: 10px !important;
+}

@@ -4,6 +4,7 @@ import Drawers from '../../components/Drawer/Drawer';
 import { FormDialog } from '../../components/Modal/Modal';
 import RecipeReviewCard from '../../components/RecipeReviewCard/RecipeReviewCard';
 import { useMisProyectosStyle } from '../../core/styles/MisProyectos/MisProyectosStyle';
+import './MisProyectos.css';
 
 export const MisProyectos = () => {
   const classes = useMisProyectosStyle();
@@ -21,7 +22,7 @@ export const MisProyectos = () => {
   return (
     <div>
       <Drawers />
-      <div className={classes.root}>
+      <div className='colum-card'>
         {data?.proyects.map((proyecto) => {
           console.log(proyecto);
           return (
