@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,67 +19,12 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItem, List, ListItemIcon, ListItemText } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: 15,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-}));
+import { useDrawerStyle } from '../../core/styles/Drawer/useDrawerStyle';
+import { useTheme } from '@material-ui/core/styles';
 
 const Drawers = (props) => {
   const { history } = props;
-  const classes = useStyles();
+  const classes = useDrawerStyle();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -101,6 +45,11 @@ const Drawers = (props) => {
     {
       text: 'Mis Proyectos',
       icon: <FolderSharedIcon />,
+      onClick: () => history.push('/MisProyectos'),
+    },
+    {
+      text: 'Todos los Proyectos',
+      icon: <FolderSharedIcon />,
       onClick: () => history.push('/Proyectos'),
     },
     {
@@ -116,7 +65,7 @@ const Drawers = (props) => {
     {
       text: 'Docentes',
       icon: <SchoolIcon />,
-      onClick: () => history.push('/Docentes'),
+      onClick: () => history.push('/Docente'),
     },
     {
       text: 'Perfil',
@@ -146,7 +95,7 @@ const Drawers = (props) => {
           </IconButton>
           <Typography variant='h6' noWrap>
             Sistema de Proyectos Integradores
-          </Typography>
+          </Typography> 
         </Toolbar>
       </AppBar>
       <Drawer
@@ -179,6 +128,7 @@ const Drawers = (props) => {
             );
           })}
         </List>
+        <img src='http://k43.kn3.net/taringa/1/4/4/3/8/4/69/alkorrogasth/CAD.gif?2423'/>
       </Drawer>
       <main
         className={clsx(classes.content, {

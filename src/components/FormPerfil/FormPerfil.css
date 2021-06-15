@@ -1,0 +1,17 @@
+
+
+.container-profile {
+  margin-left: 345px;
+  align-items: center center;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-radius: 5px;
+
+}
+.btn-create{
+  position: relative;
+  top: 54px;
+  left: 115px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
