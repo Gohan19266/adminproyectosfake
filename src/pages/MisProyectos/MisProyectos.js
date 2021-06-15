@@ -4,6 +4,7 @@ import Drawers from '../../components/Drawer/Drawer';
 import { FormDialog } from '../../components/Modal/Modal';
 import RecipeReviewCard from '../../components/RecipeReviewCard/RecipeReviewCard';
 import { useMisProyectosStyle } from '../../core/styles/MisProyectos/MisProyectosStyle';
+import './MisProyectos.css';
 
 export const MisProyectos = () => {
   const classes = useMisProyectosStyle();
