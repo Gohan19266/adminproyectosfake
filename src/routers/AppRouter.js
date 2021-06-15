@@ -14,6 +14,7 @@ import { MiPerfil } from '../pages/MiPerfil/MiPerfil';
 import { PublicRoute, PrivateRoute } from './helperRoutes';
 import { isAuthenticated } from '../services/authentication';
 import { Docente } from '../pages/Docente/Docente';
+import { Materias } from '../pages/Materias/Materias';
 
 export const AppRouter = () => {
   const isAuth = isAuthenticated();
@@ -31,6 +32,9 @@ export const AppRouter = () => {
         </PrivateRoute>
         <PrivateRoute exact path='/MisProyectos'>
           <MisProyectos />
+        </PrivateRoute>
+        <PrivateRoute exact path='/Materias'>
+          <Materias />
         </PrivateRoute>
         <Route exact path='/Perfil'>
           <MiPerfil />
