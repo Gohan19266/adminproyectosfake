@@ -1,2 +1,2 @@
 export const isAuthenticated = () =>
-  sessionStorage.getItem('token') ? true : false;
+  localStorage.getItem('token') ? true : false;

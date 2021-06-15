@@ -1,17 +1,31 @@
 import React from 'react';
 import Drawers from '../../components/Drawer/Drawer';
-import { FormDialog } from '../../components/Modal/Modal';
 import FormPerfil from '../../components/FormPerfil/FormPerfil';
-import {useMiPerfilStyle} from '../../core/styles/MiPerfil/MiPerfilStyle';
+import { useQuery, gql } from '@apollo/client';
+
 
 export const MiPerfil = () => {
-   
+
+    const campusCodeL = localStorage.getItem('campusCode');
+    const GetUserByCampusCode = gql `query getUserByCampusCode{
+      getUserByCampusCode(user:{
+        campusCode:"${campusCodeL}"
+      }){
+        name
+        email
+      }
+    }`;
+  
+  const { data } = useQuery(GetUserByCampusCode);
+  console.log(campusCodeL+"!!!!!aYUDA")
+  
+  
 
     return (
         <div>
             <Drawers />
-            <FormPerfil/>
-            <FormDialog />
+            <FormPerfil info = {data}/>
+            
         </div>
     );
 };

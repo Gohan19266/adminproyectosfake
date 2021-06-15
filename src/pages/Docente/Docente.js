@@ -1,21 +1,37 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
 import Drawers from '../../components/Drawer/Drawer';
 import  Grid  from '../../components/Grid/Grid';
+import { useQuery, gql } from '@apollo/client';
 import './Docente.css';
 
 export const Docente = () => {
-  const GetUsers = gql`
-    query{
-      users{
-        _id
-        name
-        email
-        campusCode
-      }
+  const GetUsers = gql `query{
+    users{
+      _id
+      name
+      email
+      campusCode
     }
-  `;
+  }`;
   const { data } = useQuery(GetUsers);
+
+  const users=[];
+  
+
+    {data?.users.map((user) => {
+      
+      users.push({
+       id:user._id,
+       name: user.name,
+       code: user.campusCode,
+       note:5,
+       email:user.email
+  
+      });   
+    })
+
+  };
+  
   return (
     <div>
       <Drawers />
@@ -24,15 +40,10 @@ export const Docente = () => {
            <img className='logi'src='http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png'/>
         </div>
         <div className="Grid-Card">
-          {data?.users.map((user) => {
-            console.log(user);
-               return (
-             <div>
-                
-            </div>
-          );
-        })}
-        <Grid/>
+      
+       
+        <Grid users = {users}/>;
+
         </div>
     </div>
    

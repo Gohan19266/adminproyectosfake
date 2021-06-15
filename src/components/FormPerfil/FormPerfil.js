@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './FormPerfil.css';
 import {useMiPerfilStyle} from '../../core/styles/MiPerfil/MiPerfilStyle';
+import Typography from '@material-ui/core/Typography';
 import { Button, Icon, styled } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import LoopIcon from '@material-ui/icons/Loop';
 import PersonIcon from '@material-ui/icons/Person';
-
 import Avatar from '@material-ui/core/Avatar';
 
-const FormPerfil = () => {
- const classes = useMiPerfilStyle();
-
-
+export default function FormPerfil({info}){ 
+  const classes = useMiPerfilStyle();
+  console.log("!!!!!!!!!!!!!!!!!!!")
+  console.log(info)
   return (
       <div className={classes.perfil}>
         <div className='row'>
@@ -24,7 +25,7 @@ const FormPerfil = () => {
                 alt="Perfil" 
                 src="/static/images/avatar/1.jpg" 
                 className={classes.large} 
-                > Perfil
+                > x
                   <PersonIcon/>  
                 </Avatar>
               </div>
@@ -32,7 +33,7 @@ const FormPerfil = () => {
                 <input
                   type='text'
                   className='form-control'
-                  placeholder='Nombre'
+                  placeholder=""
                   name='lnombre'
                 />
               </div>
@@ -53,12 +54,7 @@ const FormPerfil = () => {
                 />
               </div>
               <div className='form-group'>
-                <input
-                  type='text'
-                  className='form-control'
-                  placeholder='Codigo Estudiante'
-                  name='lcodigoEstudiante'
-                />
+              
               </div>
               
               <div className={classes.button}>
@@ -91,4 +87,10 @@ const FormPerfil = () => {
       </div>
   );
 };
-export default FormPerfil;
+
+FormPerfil.propTypes = {
+  info: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }),
+};

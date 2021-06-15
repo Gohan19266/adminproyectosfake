@@ -12,7 +12,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import FolderSharedIcon from '@material-ui/icons/FolderShared';
-import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
 import SchoolIcon from '@material-ui/icons/School';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -21,6 +20,8 @@ import { ListItem, List, ListItemIcon, ListItemText } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import { useDrawerStyle } from '../../core/styles/Drawer/useDrawerStyle';
 import { useTheme } from '@material-ui/core/styles';
+import PersonAddDisabledIcon from '@material-ui/icons/PersonAddDisabled';
+
 
 const Drawers = (props) => {
   const { history } = props;
@@ -35,7 +36,11 @@ const Drawers = (props) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+  const logOut = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('campusCode')
+    window.location.reload(true);
+  };
   const itemsList = [
     {
       text: 'Home',
@@ -47,21 +52,13 @@ const Drawers = (props) => {
       icon: <FolderSharedIcon />,
       onClick: () => history.push('/MisProyectos'),
     },
-    {
-      text: 'Todos los Proyectos',
-      icon: <FolderSharedIcon />,
-      onClick: () => history.push('/Proyectos'),
-    },
+  
     {
       text: 'Materias',
       icon: <ImportContactsIcon />,
       onClick: () => history.push('/Materias'),
     },
-    {
-      text: 'Mensajes',
-      icon: <MailIcon />,
-      onClick: () => history.push('/Mensajes'),
-    },
+    
     {
       text: 'Docentes',
       icon: <SchoolIcon />,
@@ -71,6 +68,11 @@ const Drawers = (props) => {
       text: 'Perfil',
       icon: <AccountCircleIcon />,
       onClick: () => history.push('/Perfil'),
+    },
+    {
+      text: 'Salir',
+      icon: <PersonAddDisabledIcon/>,
+      onClick: () => logOut(),
     },
   ];
 
