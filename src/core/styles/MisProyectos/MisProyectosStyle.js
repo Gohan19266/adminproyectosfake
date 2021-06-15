@@ -3,8 +3,7 @@ import { AdbRounded } from '@material-ui/icons';
 
 export const useMisProyectosStyle = makeStyles({
   root: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: 'grid',
   },
   card: {
     margin: 20,

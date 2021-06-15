@@ -9,3 +9,9 @@
     flex-direction: column !important;
   }
 }
+
+.colum-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-gap: 10px !important;
+}

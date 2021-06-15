@@ -22,7 +22,7 @@ export const MisProyectos = () => {
   return (
     <div>
       <Drawers />
-      <div className={classes.root}>
+      <div className='colum-card'>
         {data?.proyects.map((proyecto) => {
           console.log(proyecto);
           return (
