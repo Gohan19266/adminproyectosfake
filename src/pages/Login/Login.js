@@ -14,6 +14,7 @@ const Login = (props) => {
     mutation authUser($campusCode: String!, $password: String!) {
       authUser(user: { campusCode: $campusCode, password: $password }) {
         token
+        
       }
     }
   `;
@@ -33,7 +34,9 @@ const Login = (props) => {
       const { data } = await authUser({
         variables: { campusCode: lcampusCode, password: lPassword },
       });
-      window.sessionStorage.setItem('token', data.token);
+      console.log(data);
+      localStorage.setItem('token',data.authUser.token);
+      localStorage.setItem('campusCode',lcampusCode);
       history.push('/Home');
     } catch (error) {
       console.log(error);
@@ -51,9 +54,7 @@ const Login = (props) => {
       <div className='container login-container'>
         <div className='row'>
           <div className='col-md-6 login-form-1'>
-            <img
-              className='logo'
-              src='http://virtual.unac.edu.co/pluginfile.php/1/theme_adaptable/logo/1616779653/logoblanco1.png'
+            <img src='https://www.unac.edu.co/wp-content/uploads/2021/02/logoblanco1.png' className='logo'
             />
             <p className='cab'>Ingrese su codigo de Campus Virtual</p>
             <form>

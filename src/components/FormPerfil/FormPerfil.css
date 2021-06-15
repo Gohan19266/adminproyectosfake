@@ -15,3 +15,10 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
 }
+.form-1{
+    background: #3b56f34d;
+    border-radius: 5px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    padding: 5%;
+    left: 290px;
+}
