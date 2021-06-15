@@ -1,4 +1,5 @@
 import { makeStyles, createStyles,Theme } from '@material-ui/core/styles';
+import { indigo } from '@material-ui/core/colors';
 
 export const useMiPerfilStyle = makeStyles((theme) =>
   ({
@@ -15,7 +16,8 @@ export const useMiPerfilStyle = makeStyles((theme) =>
     large: {
       width: theme.spacing(25),
       height: theme.spacing(25),
-      color:'#1D72C1'
+      backgroundColor: indigo[500],
+      fontSize:'100px'
     },
     input1:{
       justifyContent:'center',

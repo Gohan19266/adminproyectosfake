@@ -14,6 +14,7 @@ const Login = (props) => {
     mutation authUser($campusCode: String!, $password: String!) {
       authUser(user: { campusCode: $campusCode, password: $password }) {
         token
+        
       }
     }
   `;
@@ -33,7 +34,9 @@ const Login = (props) => {
       const { data } = await authUser({
         variables: { campusCode: lcampusCode, password: lPassword },
       });
-      window.sessionStorage.setItem('token', data.token);
+      console.log(data);
+      localStorage.setItem('token',data.authUser.token);
+      localStorage.setItem('campusCode',lcampusCode);
       history.push('/Home');
     } catch (error) {
       console.log(error);

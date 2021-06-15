@@ -36,9 +36,9 @@ export const AppRouter = () => {
         <PrivateRoute exact path='/Materias'>
           <Materias />
         </PrivateRoute>
-        <Route exact path='/Perfil'>
+    <PrivateRoute exact path='/Perfil'>
           <MiPerfil />
-        </Route>
+        </PrivateRoute>
         <PrivateRoute exact path='/Docente'>
           <Docente />
         </PrivateRoute>
@@ -50,8 +50,6 @@ export const AppRouter = () => {
             return <Redirect to={isAuth ? '/Home' : '/'} />;
           }}
         />
-
-        {/* <Redirect to='/' /> */}
       </Switch>
     </Router>
   );
